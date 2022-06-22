@@ -34,7 +34,7 @@ function getQueryString(url, key) {
 }
 
 getQueryString('https://example.com/?name=111&key=222', 'name') // 111
-getQueryString('https://example.com/?name=111&key=222', 'key') // 222
+getQueryString('https://example.com/?name=111&key=222#hash', 'key') // 222
 ```
 
 ### 正则表达式：写一个获取颜色的正则表达式
