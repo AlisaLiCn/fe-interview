@@ -9,11 +9,21 @@ A collection of Front-End interview questions and study materials
 
 ## JavaScript
 ### 正则表达式：将数字转换为千分位分隔形式
+参考答案：
+```javascript
+const reg = /(\d)(?=(?:\d{3})+$)/g
+
+console.log('12345678'.replace(reg, '$1,')) // 12,345,678
+console.log('666'.replace(reg, '$1,')) // 666
+```
+
+涉及的知识点：
+- 断言
+- 字符串替换
 
 ### 正则表达式：实现一个queryString方法，来获取URL中的参数
 
 ### 正则表达式：写一个获取颜色的正则表达式
-
 参考答案：
 ```javascript
 var regexp = /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
