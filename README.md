@@ -25,7 +25,7 @@ console.log('666'.replace(reg, '$1,')) // 666
 参考题解：
 ```javascript
 function getQueryString(url, key) {
-  const regexp = new RegExp('(?:\\?|&)' + key + '=([^&=#]*)(?:&|$)')
+  const regexp = new RegExp('(?:\\?|&)' + key + '=([^&=#]*)(?:&|#|$)')
   const result = url.match(regexp)
 
   if(!result) return ''
