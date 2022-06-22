@@ -9,7 +9,7 @@ A collection of Front-End interview questions and study materials
 
 ## JavaScript
 ### 正则表达式：将数字转换为千分位分隔形式
-参考答案：
+参考题解：
 ```javascript
 const reg = /(\d)(?=(?:\d{3})+$)/g
 
@@ -22,9 +22,23 @@ console.log('666'.replace(reg, '$1,')) // 666
 - 字符串替换
 
 ### 正则表达式：实现一个queryString方法，来获取URL中的参数
+参考题解：
+```javascript
+function getQueryString(url, key) {
+  const regexp = new RegExp('(?:\\?|&)' + key + '=([^&=#]*)(?:&|$)')
+  const result = url.match(regexp)
+
+  if(!result) return ''
+
+  return result[1] ? decodeURIComponent(result[1]) : ''
+}
+
+getQueryString('https://example.com/?name=111&key=222', 'name') // 111
+getQueryString('https://example.com/?name=111&key=222', 'key') // 222
+```
 
 ### 正则表达式：写一个获取颜色的正则表达式
-参考答案：
+参考题解：
 ```javascript
 var regexp = /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
 
