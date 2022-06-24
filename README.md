@@ -7,6 +7,14 @@ A collection of Front-End interview questions and study materials
     * [正则表达式：实现一个queryString方法，来获取URL中的参数](#正则表达式实现一个querystring方法来获取url中的参数)
     * [正则表达式：写一个获取颜色的正则表达式](#正则表达式写一个获取颜色的正则表达式)
 
+  
+## CSS
+### 图片布局：实现图片木桶布局方案（原百度图片布局方案）
+参考题解：
+
+[图片木桶布局demo](https://github.com/AlisaLiCn/image-layout-demo)
+
+
 ## JavaScript
 ### 正则表达式：将数字转换为千分位分隔形式
 参考题解：
