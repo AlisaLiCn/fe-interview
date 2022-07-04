@@ -8,6 +8,9 @@ A collection of Front-End interview questions and study materials
   * [正则表达式：将数字转换为千分位分隔形式](#正则表达式将数字转换为千分位分隔形式)
   * [正则表达式：实现一个queryString方法，来获取URL中的参数](#正则表达式实现一个querystring方法来获取url中的参数)
   * [正则表达式：写一个获取颜色的正则表达式](#正则表达式写一个获取颜色的正则表达式)
+
+## HTML
+### 如何提高web可访问性
   
 ## CSS
 ### 图片布局：实现图片木桶布局（原百度图片布局方式）
