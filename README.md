@@ -12,6 +12,7 @@ A collection of Front-End interview questions and study materials
 ## HTML
 ### 如何提高web可访问性
 参考题解：  
+
 提高web可访问性是一种能让更多的人使用我们的网站的做法，比如：让有视觉或听觉障碍的人群、移动设备用户、处于低速网络环境的人群也能正常使用网站。
 
 web开发人员在开发的初期，就需要考虑可访问性相关的内容，以避免在后期难以改善。
