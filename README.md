@@ -37,6 +37,11 @@ web开发人员在开发的初期，就需要考虑可访问性相关的内容�
 
 [图片木桶布局demo](https://github.com/AlisaLiCn/image-layout-demo)
 
+## 如何通过CSS开启硬件加速来提高网站性能
+参考题解：
+
+
+参考资料：
 
 ## JavaScript
 ### 正则表达式：将数字转换为千分位分隔形式
