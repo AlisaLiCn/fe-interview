@@ -63,6 +63,7 @@ css 中可以使用 GPU 加速渲染来减轻 CPU 压力，使得页面体验更
 
 参考资料：
 - [深入理解CSS中的层叠上下文和层叠顺序](https://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/)
+- [彻底搞懂CSS层叠上下文、层叠等级、层叠顺序、z-index](https://juejin.cn/post/6844903667175260174)
 
 ## JavaScript
 ### 正则表达式：将数字转换为千分位分隔形式
