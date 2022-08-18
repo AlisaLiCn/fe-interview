@@ -1,6 +1,13 @@
 # Mac
 .DS_Store
 gh-md-toc
+node_modules
+*/node_modules
+
+# static files
+dist
+*/dist
+*.lock
 
 # Editor directories and files
 .idea
