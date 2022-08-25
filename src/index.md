@@ -1,1 +1,10 @@
-A collection of Front-End interview questions and study materials
+---
+page: true
+title: Front End interview
+---
+
+<Home/>
+
+<script setup>
+import Home from './Home.vue'
+</script>
