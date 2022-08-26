@@ -2,6 +2,7 @@
 page: true
 title: Front End interview
 sidebar: false
+aside: false
 ---
 
 <Home/>
