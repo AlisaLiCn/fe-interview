@@ -1,6 +1,7 @@
 ---
 page: true
 title: Front End interview
+sidebar: fase
 ---
 
 <Home/>
