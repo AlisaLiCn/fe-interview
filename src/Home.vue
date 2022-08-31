@@ -4,7 +4,7 @@
       A collection of Front-End interview questions and study materials
     </p>
     <p class="actions">
-      <a class="get-started" href="/html/index.html">
+      <a class="get-started" href="/html">
         Get Started
         <svg
           class="icon"
