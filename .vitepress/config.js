@@ -80,6 +80,17 @@ const sidebar = {
         }
       ]
     },  
+  ],
+  'engineering': [
+    {
+      text: 'Package Management',
+      items: [
+        {
+          text: 'npm、yarn与pnpm的区别',
+          link: '/engineering/#npmyarn与pnpm的区别'
+        },
+      ]
+    }
   ]
 }
 
