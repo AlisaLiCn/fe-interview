@@ -23,6 +23,7 @@ pnpm特性：
 - 安装速度快
 - 支持monorepo
 - 安全性高：子依赖不会被提升，不会产生幽灵依赖。
+- 新版本可以管理node.js版本
 
 > 内容寻址：通过文件内容生成内容地址（通常是通过hash算法生成），再通过内容地址找到文件。
 
@@ -31,6 +32,7 @@ pnpm弊端：
 - 因为依赖源文件是安装在store中，调试依赖或patch-package给依赖打补丁也不太方便，可能会影响其他项目。
 
 参考资料：
+- [pnpm、yarn、npm功能比较](https://pnpm.io/zh/next/feature-comparison)
 - [关于现代包管理器的深度思考——为什么现在我更推荐 pnpm 而不是 npm/yarn?](https://juejin.cn/post/6932046455733485575)
 - [深入浅出 npm & yarn & pnpm 包管理机制](https://juejin.cn/post/7104088592426729480)
 
