@@ -15,7 +15,7 @@
 
 为了解决依赖结构的不确定问题，yarn通过yarn.lock、npm 5.x通过package-lock.json来保证依赖安装后产生确定的node_modules结构。
 
-**pnpm** 
+**pnpm**  
 pnpm是全新的包管理器，通过硬链接全局存储，软链接依赖引用使依赖树结构清晰。
 
 pnpm特性：
@@ -26,7 +26,12 @@ pnpm特性：
 
 > 内容寻址：通过文件内容生成内容地址（通常是通过hash算法生成），再通过内容地址找到文件。
 
+pnpm弊端：
+- 由于pnpm创建的node_modules依赖软链接，因此在不支持软链接的环境中，无法使用 pnpm，比如 Electron 应用。
+- 因为依赖源文件是安装在store中，调试依赖或patch-package给依赖打补丁也不太方便，可能会影响其他项目。
+
 参考资料：
 - [关于现代包管理器的深度思考——为什么现在我更推荐 pnpm 而不是 npm/yarn?](https://juejin.cn/post/6932046455733485575)
+- [深入浅出 npm & yarn & pnpm 包管理机制](https://juejin.cn/post/7104088592426729480)
 
 
