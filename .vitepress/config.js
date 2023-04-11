@@ -90,6 +90,15 @@ const sidebar = {
           link: '/engineering/#npmyarn与pnpm的区别'
         },
       ]
+    },
+    {
+      text: '前端监控',
+      items: [
+        {
+          text: '设计实现前端埋点SDK',
+          link: '/engineering/#设计实现前端埋点SDK'
+        },
+      ]
     }
   ]
 }
