@@ -67,6 +67,10 @@ const sidebar = {
       text: 'RegExp',
       items: [
         {
+          text: 'JavaScript有哪几种数据类型，它们的区别？',
+          link: '/javascript/#JavaScript有哪几种数据类型'
+        },
+        {
           text: '将数字转换为千分位分隔形式',
           link: '/javascript/#将数字转换为千分位分隔形式'
         },
