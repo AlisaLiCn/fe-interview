@@ -39,17 +39,17 @@ const sidebar = {
     {
       text: '正则表达式',
       items: [
-        {
+        {        
           text: '将数字转换为千分位分隔形式',
-          link: '/javascript/#将数字转换为千分位分隔形式'
+          link: '/javascript/regexp/#将数字转换为千分位分隔形式'
         },
         {
           text: '实现一个queryString方法，来获取URL中的参数',
-          link: '/javascript/#实现一个querystring方法来获取url中的参数'
+          link: '/javascript/regexp/#实现一个querystring方法来获取url中的参数'
         },
         {
           text: '写一个获取颜色的正则表达式',
-          link: '/javascript/#写一个获取颜色的正则表达式'
+          link: '/javascript/regexp/#写一个获取颜色的正则表达式'
         }
       ]
     },  
