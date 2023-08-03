@@ -45,6 +45,10 @@ const sidebar = {
         {
           text: '箭头函数的this指向哪里',
           link: '/javascript/#箭头函数的this指向哪里'
+        },
+        {
+          text: 'ES Module与CommonJS模块有什么异同',
+          link: '/javascript/#ES Module与CommonJS模块有什么异同'
         }
       ]
     },  

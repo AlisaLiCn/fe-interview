@@ -168,3 +168,31 @@ var obj = {
 }
 
 ```
+
+### ES Module与CommonJS模块有什么异同
+
+ES Module 和 CommonJS 模块的区别： 
+- CommonJs可以动态加载语句，代码发生在运行时；ES Module是静态的，不可以动态加载语句，只能声明在该文件的最顶部，代码发生在编译时。
+- CommonJs导出值是对模块的浅拷贝，可以修改导出的值，会引起变量污染；ES Module是对模块的引用，只读只存，不能修改其值，也就是指针指向不能变，类似 const，但可以改变变量内部指针指向，
+- 可以对 commonJS 重新赋值（改变指针指向），但是对 ES Module 赋值会编译报错。 
+
+ES Module 和 CommonJS 模块的共同点： 
+CommonJS 和 ES Module 都可以对引⼊的对象进⾏赋值，即对对象内部属性的值进⾏改变。
+
+
+**ES Module**
+
+ES6模块加载规范
+
+特点：编译时加载（静态加载），而不是CommonJS那种运行时加载，效率更高。
+
+- ES Module是静态的，不可以动态加载语句，只能声明在该文件的最顶部，代码发生在编译时
+- ES Module混合导出，单个导出，默认导出，完全互不影响
+- ES Module导出是引用值之前都存在映射关系，并且值都是可读的，不能修改
+
+**CommonJS规范**
+
+nodejs的模块系统，参照CommonJS规范实现。
+
+- `const fs = require('fs')`引入模块
+- `module.exports = {}` 暴露模块
