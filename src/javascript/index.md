@@ -104,7 +104,7 @@ undefined 在 JavaScript 中不是一个保留字，这意味着可以使用 und
 
 当对这两种类型使用 typeof 进行判断时，Null 类型化会返回 “object”，这是一个历史遗留的问题。当使用双等号对两种类型的值进行比较时会返回 true，使用三个等号时会返回 false。
 
-## intanceof操作符的实现原理及代码实现
+### intanceof操作符的实现原理及代码实现
 instanceof 运算符用于判断构造函数的 prototype 属性是否出现在对象的原型链中的任何位置。
 
 实现1：
@@ -138,4 +138,33 @@ function myInstanceof(left, right) {
     proto = proto.__proto__
   }
 }
+```
+
+### 箭头函数的this指向哪里
+箭头函数不同于传统 JavaScript 中的函数，箭头函数并没有属于⾃⼰的 this，它所谓的 this 是捕获其所在上下⽂的 this 值，作为⾃⼰的 this 值，
+并且由于没有属于⾃⼰的 this，所以是不会被 new 调⽤的，这个所谓的 this 也不会被改变。
+
+用babel理解一下箭头函数：
+```
+// ES6
+const obj = {
+  getArrow() {
+    return () => {
+      console.log(this === obj)
+    }
+  }
+}
+```
+转化后：
+```
+// ES5，由babel转译
+var obj = {
+  getArrow: function getArrow() {
+    var _this = this
+    return function() {
+      console.log(_this === obj)
+    }
+  }
+}
+
 ```

@@ -41,7 +41,11 @@ const sidebar = {
         {
           text: 'null和undefined区别',
           link: '/javascript/#null和undefined区别'
-        }  
+        },
+        {
+          text: '箭头函数的this指向哪里',
+          link: '/javascript/#箭头函数的this指向哪里'
+        }
       ]
     },  
     {
