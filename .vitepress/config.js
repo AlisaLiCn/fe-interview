@@ -43,6 +43,10 @@ const sidebar = {
           link: '/javascript/#null和undefined区别'
         },
         {
+          text: '对原型、原型链的理解',
+          link: '/javascript/#对原型原型链的理解'
+        },
+        {
           text: '箭头函数的this指向哪里',
           link: '/javascript/#箭头函数的this指向哪里'
         },
