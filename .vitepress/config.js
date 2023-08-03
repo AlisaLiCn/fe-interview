@@ -24,7 +24,7 @@ const nav = [
 const sidebar = {
   'javascript': [
     {
-      text: '数据类型',
+      text: 'javascript基础',
       items: [
         {
           text: 'JavaScript有哪几种数据类型，它们的区别？',
@@ -67,8 +67,12 @@ const sidebar = {
       text: 'Optimize',
       items: [
         {
+          text: '在HTML中延迟加载JavaScript脚本的方式有哪些',
+          link: '/html/#在HTML中延迟加载JavaScript脚本的方式有哪些'
+        },
+        {
           text: '如何提高web可访问性',
-          link: '/html/#图片布局：实现图片木桶布局（原百度图片布局方式）'
+          link: '/html/#如何提高web可访问性'
         },
       ]
     },  
