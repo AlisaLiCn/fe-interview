@@ -5,9 +5,9 @@ const nav = [
     text: 'Basics',
     activeMatch: `^/(html|css|javascript)/`,
     items: [
+      { text: 'JavaScript', link: '/javascript/' },  
       { text: 'HTML', link: '/html/' },
       { text: 'CSS', link: '/css/' },
-      { text: 'JavaScript', link: '/javascript/' },  
     ]
   },
   {
@@ -22,6 +22,38 @@ const nav = [
   },
 ]
 const sidebar = {
+  'javascript': [
+    {
+      text: '数据类型',
+      items: [
+        {
+          text: 'JavaScript有哪几种数据类型，它们的区别？',
+          link: '/javascript/#JavaScript有哪几种数据类型'
+        },
+        {
+          text: '检测数据类型的方式有哪些',
+          link: '/javascript/#检测数据类型的方式有哪些'
+        },    
+      ]
+    },  
+    {
+      text: '正则表达式',
+      items: [
+        {
+          text: '将数字转换为千分位分隔形式',
+          link: '/javascript/#将数字转换为千分位分隔形式'
+        },
+        {
+          text: '实现一个queryString方法，来获取URL中的参数',
+          link: '/javascript/#实现一个querystring方法来获取url中的参数'
+        },
+        {
+          text: '写一个获取颜色的正则表达式',
+          link: '/javascript/#写一个获取颜色的正则表达式'
+        }
+      ]
+    },  
+  ],
   'html': [
     {
       text: 'Optimize',
@@ -59,29 +91,6 @@ const sidebar = {
           text: '如何通过CSS开启硬件加速来提高网站性能',
           link: '/css/#如何通过CSS开启硬件加速来提高网站性能'
         },
-      ]
-    },  
-  ],
-  'javascript': [
-    {
-      text: 'RegExp',
-      items: [
-        {
-          text: 'JavaScript有哪几种数据类型，它们的区别？',
-          link: '/javascript/#JavaScript有哪几种数据类型'
-        },
-        {
-          text: '将数字转换为千分位分隔形式',
-          link: '/javascript/#将数字转换为千分位分隔形式'
-        },
-        {
-          text: '实现一个queryString方法，来获取URL中的参数',
-          link: '/javascript/#实现一个querystring方法来获取url中的参数'
-        },
-        {
-          text: '写一个获取颜色的正则表达式',
-          link: '/javascript/#写一个获取颜色的正则表达式'
-        }
       ]
     },  
   ],
