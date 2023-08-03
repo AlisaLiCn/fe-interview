@@ -27,8 +27,8 @@ const sidebar = {
       text: 'javascript基础',
       items: [
         {
-          text: 'JavaScript有哪几种数据类型，它们的区别？',
-          link: '/javascript/#JavaScript有哪几种数据类型'
+          text: 'JavaScript有哪几种数据类型，它们的区别',
+          link: '/javascript/#javascript有哪几种数据类型它们的区别'
         },
         {
           text: '检测数据类型的方式有哪些',
@@ -47,8 +47,12 @@ const sidebar = {
           link: '/javascript/#箭头函数的this指向哪里'
         },
         {
+          text: 'for...in和for...of的区别',
+          link: '/javascript/#for-in-和-for-of-的区别'
+        },
+        {
           text: 'ES Module与CommonJS模块有什么异同',
-          link: '/javascript/#ES Module与CommonJS模块有什么异同'
+          link: '/javascript/#es-module与commonjs模块有什么异同'
         }
       ]
     },  
