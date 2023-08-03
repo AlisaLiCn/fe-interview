@@ -28,7 +28,7 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、 Nu
 
 ### 检测数据类型的方式有哪些
 1.typeof
-```
+```javascript
 console.log(typeof 2) // number
 console.log(typeof true) // boolean
 console.log(typeof 'str') // string
@@ -43,7 +43,7 @@ console.log(typeof null) // object
 
 2.instanceof
 instanceof 可以正确判断对象的类型，其内部运行机制是判断在其原型链中能否找到该类型的原型。
-```
+```javascript
 console.log(2 instanceof Number) // false
 console.log(true instanceof Boolean) // false
 console.log('str' instanceof String) // false
@@ -60,7 +60,8 @@ instanceof 运算符可以用来测试一个对象在其原型链中是否存在
 3.constructor
 constructor 有两个作用，一是判断数据的类型，二是对象实例通过 constrcutor 对象访问它的构造函数。
 需要注意，如果创建一个对象来改变它的原型，constructor 就不能用来判断数据类型了：
-```
+
+```javascript
 var a = new Array()
 console.log(a.constructor === Array) // true
 
@@ -75,7 +76,8 @@ console.log(f.constructor === Array) // true
 
 4.Object.prototype.toString.call()
 Object.prototype.toString.call() 使用 Object 对象的原型方法 toString 来判断数据类型：
-```
+
+```javascript
 var a = Object.prototype.toString;
 
 console.log(a.call(2)) // [object Number]
@@ -91,3 +93,49 @@ console.log(a.call(null)) // [object Null]
 与obj.toString()不同，toString 是 Object 的原型方法，而 Array、function 等类型作为 Object 的实例，都重写了 toString 方法。不同的对象类型调用 toString 方法时，根据原型链的知识，调用的是对应的重写之后的 toString 方法（function 类型返回内容为函数体的字符串，Array 类型返回元素组成的字符串…），而不会去调用 Object 上原型 toString 方法（返回对象的具体类型），所以采用 obj.toString() 不能得到其对象类型，只能将 obj 转换为字符串类型；
 
 因此，在想要得到对象的具体类型时，应该调用 Object 原型上的 toString 方法。
+
+### null和undefined区别
+
+Undefined 和 Null 都是基本数据类型，这两个基本数据类型分别都只有一个值，就是 undefined 和 null。 
+
+undefined 代表的含义是未定义，null 代表的含义是空对象。一般变量声明了但还没有定义的时候会返回undefined，null 主要用于赋值给一些可能会返回对象的变量，作为初始化。 
+
+undefined 在 JavaScript 中不是一个保留字，这意味着可以使用 undefined 来作为一个变量名，但是这样的做法是非常危险的，它会影响对 undefined 值的判断。我们可以通过一些方法获得安全的 undefined 值，比如说 void 0。 
+
+当对这两种类型使用 typeof 进行判断时，Null 类型化会返回 “object”，这是一个历史遗留的问题。当使用双等号对两种类型的值进行比较时会返回 true，使用三个等号时会返回 false。
+
+## intanceof操作符的实现原理及代码实现
+instanceof 运算符用于判断构造函数的 prototype 属性是否出现在对象的原型链中的任何位置。
+
+实现1：
+```javascript
+function myInstanceof(left, right) {
+  // 获取对象的原型
+  let proto = Object.getPrototypeOf(left)
+  // 获取构造函数的prototype属性
+  let prototype = right.prototype
+
+  while(true) {
+    if(!proto) return false
+    if(proto === prototype) return true
+    // 如果没有找到，继续从其原型上找，Object.getPrototypeOf用来获取指定对象的原型
+    proto = Object.getPrototypeOf(proto)
+  }
+}
+
+```
+
+实现2：
+```javascript
+function myInstanceof(left, right) {
+  let proto = left.__proto__
+
+  while (true) {
+    if(proto === null) return false
+
+    if(proto === right.prototype) return true
+
+    proto = proto.__proto__
+  }
+}
+```

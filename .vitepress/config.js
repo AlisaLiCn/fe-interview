@@ -33,7 +33,15 @@ const sidebar = {
         {
           text: '检测数据类型的方式有哪些',
           link: '/javascript/#检测数据类型的方式有哪些'
-        },    
+        }, 
+        {
+          text: 'intanceof操作符的实现原理及代码实现',
+          link: '/javascript/#intanceof操作符的实现原理及代码实现'
+        }, 
+        {
+          text: 'null和undefined区别',
+          link: '/javascript/#null和undefined区别'
+        }  
       ]
     },  
     {
