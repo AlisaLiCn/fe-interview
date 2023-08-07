@@ -59,6 +59,10 @@ const sidebar = {
           link: '/javascript/#箭头函数的this指向哪里'
         },
         {
+          text: 'call、apply、bind的区别',
+          link: '/javascript/#callapplybind的区别'
+        },        
+        {
           text: 'for...in和for...of的区别',
           link: '/javascript/#for-in-和-for-of-的区别'
         },
