@@ -49,6 +49,10 @@ const sidebar = {
         {
           text: '对作用域、作用域链的理解',
           link: '/javascript/#对作用域作用域链的理解'
+        },      
+        {
+          text: '对this对象的理解',
+          link: '/javascript/#对this对象的理解'
         },
         {
           text: '箭头函数的this指向哪里',
