@@ -45,7 +45,15 @@ const sidebar = {
         {
           text: '对原型、原型链的理解',
           link: '/javascript/#对原型原型链的理解'
+        },       
+        {
+          text: '创建对象的方式有哪些',
+          link: '/javascript/#创建对象的方式有哪些'
         },      
+        {
+          text: '对象继承的方式有哪些',
+          link: '/javascript/#对象继承的方式有哪些'
+        },
         {
           text: '对作用域、作用域链的理解',
           link: '/javascript/#对作用域作用域链的理解'
