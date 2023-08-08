@@ -75,9 +75,22 @@ const sidebar = {
           link: '/javascript/#for-in-和-for-of-的区别'
         },
         {
+          text: '异步编程的实现方式',
+          link: '/javascript/#异步编程的实现方式'
+        },        
+        {
+          text: '对Promise的理解',
+          link: '/javascript/#对Promise的理解'
+        },
+        {
           text: 'ES Module与CommonJS模块有什么异同',
           link: '/javascript/#es-module与commonjs模块有什么异同'
-        }
+        },
+        {
+          text: '哪些情况会导致内存泄漏',
+          link: '/javascript/#哪些情况会导致内存泄漏'
+        },
+        
       ]
     },  
     {
