@@ -27,24 +27,24 @@ const sidebar = {
       text: 'javascript基础',
       items: [
         {
-          text: 'JavaScript有哪几种数据类型，它们的区别',
-          link: '/javascript/#javascript有哪几种数据类型它们的区别'
+          text: 'JavaScript的数据类型及它们的区别',
+          link: '/javascript/#javascript的数据类型及它们的区别'
         },
         {
           text: '检测数据类型的方式有哪些',
           link: '/javascript/#检测数据类型的方式有哪些'
-        }, 
-        {
-          text: 'intanceof操作符的实现原理及代码实现',
-          link: '/javascript/#intanceof操作符的实现原理及代码实现'
-        }, 
+        },         
         {
           text: 'null和undefined区别',
           link: '/javascript/#null和undefined区别'
         },
         {
-          text: '对原型、原型链的理解',
-          link: '/javascript/#对原型原型链的理解'
+          text: 'intanceof操作符的实现原理及代码实现',
+          link: '/javascript/#intanceof操作符的实现原理及代码实现'
+        }, 
+        {
+          text: '对原型及原型链的理解',
+          link: '/javascript/#对原型及原型链的理解'
         },       
         {
           text: '创建对象的方式有哪些',
@@ -55,8 +55,8 @@ const sidebar = {
           link: '/javascript/#对象继承的方式有哪些'
         },
         {
-          text: '对作用域、作用域链的理解',
-          link: '/javascript/#对作用域作用域链的理解'
+          text: '对作用域及作用域链的理解',
+          link: '/javascript/#对作用域及作用域链的理解'
         },      
         {
           text: '对this对象的理解',
@@ -67,8 +67,8 @@ const sidebar = {
           link: '/javascript/#箭头函数的this指向哪里'
         },
         {
-          text: 'call、apply、bind的区别',
-          link: '/javascript/#callapplybind的区别'
+          text: 'call apply bind的区别',
+          link: '/javascript/#call-apply-bind的区别'
         },        
         {
           text: 'for...in和for...of的区别',
@@ -80,7 +80,15 @@ const sidebar = {
         },        
         {
           text: '对Promise的理解',
-          link: '/javascript/#对Promise的理解'
+          link: '/javascript/#对promise的理解'
+        },              
+        {
+          text: '对async/await的理解',
+          link: '/javascript/#对async-await的理解'
+        },
+        {
+          text: 'async/await 对比 Promise 的优势',
+          link: '/javascript/#async-await-对比-promise-的优势'
         },
         {
           text: 'ES Module与CommonJS模块有什么异同',
@@ -101,8 +109,8 @@ const sidebar = {
           link: '/javascript/regexp/#将数字转换为千分位分隔形式'
         },
         {
-          text: '实现一个queryString方法，来获取URL中的参数',
-          link: '/javascript/regexp/#实现一个querystring方法来获取url中的参数'
+          text: '实现一个获取URL中参数的queryString方法',
+          link: '/javascript/regexp/#实现一个获取URL中参数的queryString方法'
         },
         {
           text: '写一个获取颜色的正则表达式',

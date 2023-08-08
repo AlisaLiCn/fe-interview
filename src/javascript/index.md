@@ -1,5 +1,5 @@
 
-### [JavaScript有哪几种数据类型，它们的区别](#javascript有哪几种数据类型它们的区别)
+### JavaScript的数据类型及它们的区别
 参考题解：
 
 JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、 Number、String、Object、Symbol、BigInt。
@@ -140,7 +140,7 @@ function myInstanceof(left, right) {
 }
 ```
 
-### [对原型、原型链的理解](#对原型原型链的理解)
+### 对原型及原型链的理解
 在 JavaScript 中是使用构造函数来新建一个对象的，每一个构造函数的内部都有一个 prototype 属性，它的属性值是一个对象，这个对象包含了可以由该构造函数的所有实例共享的属性和方法。当使用构造函数新建一个对象后，在这个对象的内部将包含一个指针，这个指针指向构造函数的 prototype 属性对应的值，在 ES5 中这个指针被称为对象的原型。
 一般来说不应该能够获取到这个值的，但是现在浏览器中都实现了 __proto__ 属性来访问这个属性，但是最好不要使用这个属性，因为它不是规范中规定的。
 ES5 中新增了一个 Object.getPrototypeOf() 方法，可以通过这个方法来获取对象的原型。
@@ -175,7 +175,7 @@ console.log(Object.prototype.__proto__) // null
 6. 第六种方式是寄生式组合继承，组合继承的缺点就是使用超类型的实例做为子类型的原型，导致添加了不必要的原型属性。寄生式 组合继承的方式是使用超类型的原型的副本来作为子类型的原型，这样就避免了创建不必要的属性。
 
 
-### 对作用域、作用域链的理解
+### 对作用域及作用域链的理解
 1. 全局作用域和函数作用域 
 
 全局作用域
@@ -246,7 +246,7 @@ var obj = {
 
 ```
 
-### call、apply、bind的区别
+### call apply bind的区别
 call、apply的作用一样，区别仅在于传入参数的形式的不同。 
 - apply 接受两个参数，第一个参数指定了函数体内 this 对象的指向， 第二个参数为一个带下标的集合，这个集合可以为数组，也可以为类数组，apply 方法把这个集合中的元素作为参数传递给被调用的函数。 
 - call 传入的参数数量不固定，跟 apply 相同的是，第一个参数也是代表函数体内的 this 指向，从第二个参数开始往后，每个参数被依次传入函数。
@@ -264,7 +264,7 @@ call和apply：
 - 数据类型判断：Object.prototype.toString.call()几乎可以判断所有类型的数据
 - 继承：借用构造函数，在子类型中调用父类型的函数
 
-### [for...in 和 for...of 的区别](#for-in-和-for-of-的区别)
+### for...in 和 for...of 的区别
 for...of 是 ES6 新增的遍历方式，允许遍历一个含有 iterator 接口的数据结构（可迭代对象，数组、对象等）并且返回各项的值，和 ES3 中的 for...in 的区别如下：
 
 - for...in 获取的是对象的键名（Symbol除外），for...of 遍历获取的是对象的键值；
@@ -322,9 +322,46 @@ Promise 对象是异步编程的一种解决方案，最早由社区提出。Pro
 
 注意：在构造 Promise 的时候，构造函数内部的代码是立即执行的
 
+### 对async await的理解
+async/await 其实是 Generator 的语法糖，它能实现的效果都能用 then 链来实现，它是为优化 then 链而开发出来的。
+从字面上来看， async 是“异步”的简写，await 则为等待，所以很好理解 async 用于申明一个 function 是异步的，而 await 用于等待一个异步方法执行完成。当然语法上强制规定 await 只能出现在 asnyc 函数中。
 
+```javascript
+async function testAsync() {
+  return 'hello, world'
+}
+let result = testAsync()
+console.log(result)
 
-### [ES Module与CommonJS模块有什么异同](#es-module与commonjs模块有什么异同)
+```
+
+执行上述代码，可以看出，async 函数（包含 函数语句、函数表达式、Lambda 表达式）返回的事一个 Promise 对象， 如果在函数中 return 一个直接量，async 会把这个直接量通过 Promise.resolve() 封装成 Promise 对象。
+
+async 函数返回的是一个 Promise 对象，所以在最外层不能用 await 获取其返回值的情况下，当然应该用原来的方式：then() 链来处理这个 Promise 对象，就像这样：
+```javascript
+async function testAsync() {
+  return 'hello, world'
+}
+let result = testAsync()
+console.log(result)
+result.then(data => {
+   console.log(data) // hello, world
+})
+```
+
+如果 async 函数没有返回值，它会返回 Promise.resolve(undefined)。
+
+联想一下 Promise 的特点——无等待，所以在没有 await 的情况下执行 async 函数，它会立即执行，返回一个 Promise 对象，并且， 绝不会阻塞后面的语句。这和普通返回 Promise 对象的函数并无二致。
+
+注意：Promise.resolve(x) 可以看作是 new Promise(resolve => resolve(x)) 的简写，可以用于快速封装字面量对象或其他对象，将其封装成 Promise 实例。
+
+### async await 对比 Promise 的优势
+- 代码读起来更加同步，Promise 虽然摆脱了回调地狱，但是 then 的链式调⽤也会带来额外的阅读负担。
+- Promise 传递中间值⾮常麻烦，⽽async/await⼏乎是同步的写法，⾮常优雅。
+- 错误处理友好，async/await 可以⽤成熟的 try/catch，Promise 的错误捕获⾮常冗余。
+- 调试友好，Promise 的调试很差，由于没有代码块，你不能在⼀个返回表达式的箭头函数中设置断点，如果你在⼀个.then 代码块中使⽤调试器的步进(step-over)功能，调试器并不会进⼊后续的.then 代码块，因为调试器只能跟踪同步代码的每⼀步。
+
+### ES Module与CommonJS模块有什么异同
 
 ES Module 和 CommonJS 模块的区别： 
 - CommonJs可以动态加载语句，代码发生在运行时；ES Module是静态的，不可以动态加载语句，只能声明在该文件的最顶部，代码发生在编译时。
