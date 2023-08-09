@@ -5,15 +5,18 @@ const nav = [
     text: 'Basics',
     activeMatch: `^/(html|css|javascript)/`,
     items: [
-      { text: 'JavaScript', link: '/javascript/' },  
+      { text: 'JavaScript', link: '/javascript/' },
       { text: 'HTML', link: '/html/' },
       { text: 'CSS', link: '/css/' },
     ]
   },
   {
     text: 'Framework',
-    activeMatch: `^/framework/`,
-    link: '/framework/'
+    activeMatch: `^/(vue|react)/`,
+    items: [
+      { text: 'Vue', link: '/vue/' },
+      { text: 'React', link: '/react/' },
+    ]
   },
   {
     text: 'Engineering',
@@ -159,6 +162,21 @@ const sidebar = {
         {
           text: '如何通过CSS开启硬件加速来提高网站性能',
           link: '/css/#如何通过CSS开启硬件加速来提高网站性能'
+        },
+      ]
+    },  
+  ],
+  'vue': [
+    {
+      text: '底层原理',
+      items: [
+        {
+          text: 'Vue的基本原理',
+          link: '/vue/#Vue的基本原理'
+        },        
+        {
+          text: '双向数据绑定的原理',
+          link: '/vue/#双向数据绑定的原理'
         },
       ]
     },  
