@@ -3,11 +3,12 @@ import { defineConfig } from 'vitepress'
 const nav = [
   {
     text: 'Basics',
-    activeMatch: `^/(html|css|javascript)/`,
+    activeMatch: `^/(html|css|javascript|typescript)/`,
     items: [
       { text: 'JavaScript', link: '/javascript/' },
       { text: 'HTML', link: '/html/' },
       { text: 'CSS', link: '/css/' },
+      { text: 'TypeScript', link: '/typescript/' },
     ]
   },
   {
@@ -166,6 +167,17 @@ const sidebar = {
       ]
     },  
   ],
+  'typescript': [
+    {
+      text: '基础',
+      items: [
+        {
+          text: 'TypeScript及静态类型语言的优缺点',
+          link: '/vue/#typescript及静态类型语言的优缺点'
+        },
+      ]
+    },  
+  ],
   'vue': [
     {
       text: '底层原理',
@@ -178,6 +190,10 @@ const sidebar = {
           text: '双向数据绑定的原理',
           link: '/vue/#双向数据绑定的原理'
         },
+        {
+          text: 'MVVM MVC MVP 的区别',
+          link: '/vue/#mvvm-mvc-mvp-的区别'
+        }
       ]
     },  
   ],
