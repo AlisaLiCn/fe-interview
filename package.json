@@ -11,6 +11,6 @@
   "author": "AlisaLiCn <alisalicn@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.8"
+    "vitepress": "v1.0.0-beta.7"
   }
 }

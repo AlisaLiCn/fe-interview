@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+// import { defineConfig } from 'vitepress'
 
 const nav = [
   {
@@ -184,7 +184,7 @@ const sidebar = {
       items: [
         {
           text: 'Vue的基本原理',
-          link: '/vue/#Vue的基本原理'
+          link: '/vue/#vue的基本原理'
         },        
         {
           text: '双向数据绑定的原理',
@@ -193,6 +193,10 @@ const sidebar = {
         {
           text: 'MVVM MVC MVP 的区别',
           link: '/vue/#mvvm-mvc-mvp-的区别'
+        },
+        {
+          text: 'slot的作用及原理',
+          link: '/vue/#slot的作用及原理'
         }
       ]
     },  
@@ -219,7 +223,7 @@ const sidebar = {
   ]
 }
 
-export default defineConfig({
+export default {
   base: '/fe-interview/',
   title: 'Front End Interview',
   description: 'A collection of Front-End interview questions and study materials',
@@ -235,4 +239,4 @@ export default defineConfig({
       copyright: `Copyright © 2022-${new Date().getFullYear()} <a href="https://github.com/alisalicn" target="_blank">Alisa Li</a>`
     },
   }
-})
+}
