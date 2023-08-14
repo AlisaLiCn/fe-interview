@@ -197,6 +197,10 @@ const sidebar = {
         {
           text: 'slot的作用及原理',
           link: '/vue/#slot的作用及原理'
+        },
+        {
+          text: 'nexttick原理及作用',
+          link: '/vue/#nexttick原理及作用'
         }
       ]
     },  
