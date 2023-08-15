@@ -175,12 +175,16 @@ const sidebar = {
           text: 'TypeScript及静态类型语言的优缺点',
           link: '/vue/#typescript及静态类型语言的优缺点'
         },
+        {
+          text: 'TypeScript及静态类型语言的优缺点',
+          link: '/vue/#typescript及静态类型语言的优缺点'
+        },
       ]
     },  
   ],
   'vue': [
     {
-      text: '底层原理',
+      text: '基本原理',
       items: [
         {
           text: 'Vue的基本原理',
@@ -201,6 +205,14 @@ const sidebar = {
         {
           text: 'nexttick原理及作用',
           link: '/vue/#nexttick原理及作用'
+        },
+        {
+          text: '子组件可以直接改变父组件的数据吗',
+          link: '/vue/#子组件可以直接改变父组件的数据吗'
+        },
+        {
+          text: '对React和Vue的理解并比较他们的异同',
+          link: '/vue/#对react和vue的理解并比较他们的异同'
         }
       ]
     },  

@@ -19,3 +19,14 @@
 总的来说，这些缺点使得 TypeScript 不一定适合那些小型的、短期的个人项目。
 
 参考资料来源：[阮一峰 - TypeScript教程](https://wangdoc.com/typescript/intro)
+
+### any、unknown和never的区别
+any和unknown含义相同，都表示类型不确定，可能是任意类型。unknown类型的引入，是为了解决any类型“污染”其他变量的问题。
+never表示该类型为空，不包含任何值。由于不存在任何属于“空类型”的值，所以该类型被称为never，即不可能有这样的值。
+
+区别：
+- unknown类型的变量，不能直接赋值给其他类型的变量（除了any类型和unknown类型）。never类型可以赋值给任意其他类型。
+- 不能直接调用unknown类型变量的方法和属性。
+- unknown类型变量能够进行的运算是有限的，只能进行比较运算（运算符==、===、!=、!==、||、&&、?）、取反运算（运算符!）、typeof运算符和instanceof运算符这几种，其他运算都会报错。
+- 只有经过“类型缩小”，unknown类型变量才可以使用。所谓“类型缩小”，就是缩小unknown变量的类型范围，确保不会出错。unknown可以看作是更安全的any。一般来说，凡是需要设为any类型的地方，通常都应该优先考虑设为unknown类型。
+- any、unknown都是顶层类型，never是底层类型（是任何其他类型所共有的）。
