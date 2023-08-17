@@ -29,4 +29,22 @@ never表示该类型为空，不包含任何值。由于不存在任何属于“
 - 不能直接调用unknown类型变量的方法和属性。
 - unknown类型变量能够进行的运算是有限的，只能进行比较运算（运算符==、===、!=、!==、||、&&、?）、取反运算（运算符!）、typeof运算符和instanceof运算符这几种，其他运算都会报错。
 - 只有经过“类型缩小”，unknown类型变量才可以使用。所谓“类型缩小”，就是缩小unknown变量的类型范围，确保不会出错。unknown可以看作是更安全的any。一般来说，凡是需要设为any类型的地方，通常都应该优先考虑设为unknown类型。
+- never主要用于抛出错误的函数、无限执行的函数。never表示函数没有执行结束，不可能有返回值；void表示函数正常执行结束，但是不返回值，或者说返回undefined。
 - any、unknown都是顶层类型，never是底层类型（是任何其他类型所共有的）。
+
+### type与interface的异同
+interface命令与type命令作用类似，都可以表示对象类型。很多对象类型即可以用 interface 表示，也可以用 type 表示。而且，两者往往可以换用，几乎所有的 interface 命令都可以改写为 type 命令。
+
+它们的相似之处，首先表现在都能为对象类型起名。
+
+**区别**
+- type能够表示非对象类型，而interface只能表示对象类型（包括数组、函数等）。
+- interface可以继承其他类型，type不支持继承。继承的主要作用是添加属性，type定义的对象类型如果想要添加属性，只能使用&运算符，重新定义一个类型。interface添加属性，采用的是继承的写法。继承时，type 和 interface 是可以换用的。interface 可以继承 type。type 也可以通过&写法继承 interface。
+- 同名interface会自动合并，同名type则会报错。也就是说，TypeScript 不允许使用type多次定义同一个类型。
+- interface不能包含属性映射（mapping），type可以。
+- this关键字只能用于interface。
+- type 可以扩展原始数据类型，interface 不行。
+- interface无法表达某些复杂类型（比如交叉类型和联合类型），但是type可以。
+综上所述，如果有复杂的类型运算，那么没有其他选择只能使用type；一般情况下，interface灵活性比较高，便于扩充类型或自动合并，建议优先使用。
+
+参考资料：[阮一峰 - TypeScript教程 - interface 与 type 的异同](https://wangdoc.com/typescript/interface#interface-%E4%B8%8E-type-%E7%9A%84%E5%BC%82%E5%90%8C)

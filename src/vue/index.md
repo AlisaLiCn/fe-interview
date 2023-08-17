@@ -74,3 +74,4 @@ Vue 提倡单向数据流，即父级 props 的更新会流向子组件，但是
   - 高阶组件就是高阶函数，而 React 的组件本身就是纯粹的函数，所以高阶函数对 React 来说易如反掌。相反 Vue.js 使用 HTML 模板创建视图组件，这时模板无法有效的编译，因此 Vue 不能采用 HOC 来实现。
 - 构建工具：两者都有自己的构建工具：React ==> Create React APP，Vue ==> vue-cli。
 - 跨平台：React ==> React Native，Vue ==> Weex。
+
