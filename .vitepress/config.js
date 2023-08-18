@@ -193,10 +193,14 @@ const sidebar = {
         {
           text: '双向数据绑定的原理',
           link: '/vue/#双向数据绑定的原理'
-        },
+        },        
         {
           text: 'MVVM MVC MVP 的区别',
           link: '/vue/#mvvm-mvc-mvp-的区别'
+        },
+        {
+          text: 'Vue模板编译原理',
+          link: '/vue/#Vue模板编译原理'
         },
         {
           text: 'slot的作用及原理',
@@ -213,6 +217,10 @@ const sidebar = {
         {
           text: '对React和Vue的理解并比较他们的异同',
           link: '/vue/#对react和vue的理解并比较他们的异同'
+        },
+        {
+          text: 'Vue的优点',
+          links: '/vue/#Vue的优点'
         }
       ]
     },  
