@@ -200,7 +200,19 @@ const sidebar = {
         },
         {
           text: 'Vue模板编译原理',
-          link: '/vue/#Vue模板编译原理'
+          link: '/vue/#vue模板编译原理'
+        },        
+        {
+          text: '对Vue组件化的理解',
+          link: '/vue/#对vue组件化的理解'
+        },
+        {
+          text: '对Vue设计原则的理解',
+          link: '/vue/#对vue设计原则的理解'
+        },        
+        {
+          text: '说说Vue的生命周期',
+          link: '/vue/#说说vue的生命周期'
         },
         {
           text: 'slot的作用及原理',
@@ -220,7 +232,7 @@ const sidebar = {
         },
         {
           text: 'Vue的优点',
-          links: '/vue/#Vue的优点'
+          links: '/vue/#vue的优点'
         }
       ]
     },  
@@ -240,7 +252,7 @@ const sidebar = {
       items: [
         {
           text: '设计实现前端埋点SDK',
-          link: '/engineering/#设计实现前端埋点SDK'
+          link: '/engineering/#设计实现前端埋点sdk'
         },
       ]
     }
