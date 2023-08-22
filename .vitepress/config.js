@@ -235,7 +235,16 @@ const sidebar = {
           links: '/vue/#vue的优点'
         }
       ]
-    },  
+    },
+    {
+      text: 'Vuex',
+      items: [
+        {
+          text: 'Vuex的基本原理',
+          link: '/vue/vuex/#vuex的基本原理'
+        },  
+      ]
+    }
   ],
   'engineering': [
     {
