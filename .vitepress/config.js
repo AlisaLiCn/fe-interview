@@ -215,6 +215,10 @@ const sidebar = {
           link: '/vue/#说说vue的生命周期'
         },
         {
+          text: 'created和mounted区别',
+          link: '/vue/#created和mounted区别'
+        },
+        {
           text: 'slot的作用及原理',
           link: '/vue/#slot的作用及原理'
         },

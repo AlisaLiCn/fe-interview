@@ -60,6 +60,10 @@ Vue实例有⼀个完整的⽣命周期，也就是从开始创建、初始化�
 另外还有 keep-alive 独有的生命周期，分别为 activated 和 deactivated。用 keep-alive 包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行 deactivated 钩子函数，命中缓存渲染后会执行activated钩子函数。
 
 
+### created和mounted区别
+- created: 在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图。 
+- mounted: 在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。mounted不保证所有的子组件也都一起被挂载。如果希望等到整个视图都渲染完毕，可以在mounted内部使用 vm.$nextTick。
+
 ### slot的作用及原理
 slot 又名插槽，是 Vue 的内容分发机制，组件内部的模板引擎使用 slot 元素作为承载分发内容的出口。插槽 slot 是子组件的一个模板标签元素，而这一个标签元素是否显示，以及怎么显示是由父组件决定的。slot 又分三类，默认插槽、具名插槽和作用域插槽。
 
