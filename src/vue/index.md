@@ -81,6 +81,29 @@ nextTick 是典型的将底层 JavaScript 执行原理应用到具体案例中�
 - 在vue生命周期中，如果在created()钩子进行DOM操作，也一定要放在nextTick()的回调函数中。因为在created()钩子函数中，页面的DOM还未渲染，这时候也没办法操作DOM，所以，此时如果想要操作DOM，必须将操作的代码放在nextTick()的回调函数中。
 
 
+### Vue子组件和父组件执行顺序
+加载渲染过程： 
+1. 父组件 beforeCreate 
+2. 父组件 created 
+3. 父组件 beforeMount
+4. 子组件 beforeCreate 
+5. 子组件 created 
+6. 子组件 beforeMount 
+7. 子组件 mounted 
+8. 父组件 mounted
+
+更新过程： 
+1. 父组件 beforeUpdate 
+2. 子组件 beforeUpdate 
+3. 子组件 updated 
+4. 父组件 updated
+
+销毁过程： 
+1. 父组件 beforeDestroy
+2. 子组件 beforeDestroy 
+3. 子组件 destroyed 
+4. 父组件 destoryed
+
 ### 子组件可以直接改变父组件的数据吗
 子组件不可以直接改变父组件的数据。这样做主要是为了维护父子组件的单向数据流。每次父级组件发生更新时，子组件中所有的 prop 都将会刷新为最新的值。如果这样做了，Vue 会在浏览器的控制台中发出警告。
 

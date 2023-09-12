@@ -37,7 +37,7 @@ const sidebar = {
         {
           text: '检测数据类型的方式有哪些',
           link: '/javascript/#检测数据类型的方式有哪些'
-        },         
+        },
         {
           text: 'null和undefined区别',
           link: '/javascript/#null和undefined区别'
@@ -45,15 +45,15 @@ const sidebar = {
         {
           text: 'intanceof操作符的实现原理及代码实现',
           link: '/javascript/#intanceof操作符的实现原理及代码实现'
-        }, 
+        },
         {
           text: '对原型及原型链的理解',
           link: '/javascript/#对原型及原型链的理解'
-        },       
+        },
         {
           text: '创建对象的方式有哪些',
           link: '/javascript/#创建对象的方式有哪些'
-        },      
+        },
         {
           text: '对象继承的方式有哪些',
           link: '/javascript/#对象继承的方式有哪些'
@@ -61,7 +61,7 @@ const sidebar = {
         {
           text: '对作用域及作用域链的理解',
           link: '/javascript/#对作用域及作用域链的理解'
-        },      
+        },
         {
           text: '对this对象的理解',
           link: '/javascript/#对this对象的理解'
@@ -73,7 +73,7 @@ const sidebar = {
         {
           text: 'call apply bind的区别',
           link: '/javascript/#call-apply-bind的区别'
-        },        
+        },
         {
           text: 'for...in和for...of的区别',
           link: '/javascript/#for-in-和-for-of-的区别'
@@ -81,11 +81,11 @@ const sidebar = {
         {
           text: '异步编程的实现方式',
           link: '/javascript/#异步编程的实现方式'
-        },        
+        },
         {
           text: '对Promise的理解',
           link: '/javascript/#对promise的理解'
-        },              
+        },
         {
           text: '对async/await的理解',
           link: '/javascript/#对async-await的理解'
@@ -102,13 +102,13 @@ const sidebar = {
           text: '哪些情况会导致内存泄漏',
           link: '/javascript/#哪些情况会导致内存泄漏'
         },
-        
+
       ]
-    },  
+    },
     {
       text: '正则表达式',
       items: [
-        {        
+        {
           text: '将数字转换为千分位分隔形式',
           link: '/javascript/regexp/#将数字转换为千分位分隔形式'
         },
@@ -121,7 +121,7 @@ const sidebar = {
           link: '/javascript/regexp/#写一个获取颜色的正则表达式'
         }
       ]
-    },  
+    },
   ],
   'html': [
     {
@@ -136,7 +136,7 @@ const sidebar = {
           link: '/html/#如何提高web可访问性'
         },
       ]
-    },  
+    },
   ],
   'css': [
     {
@@ -147,7 +147,7 @@ const sidebar = {
           link: '/css/#说说对CSS层叠上下文的理解'
         },
       ]
-    },  
+    },
     {
       text: 'Image',
       items: [
@@ -156,7 +156,7 @@ const sidebar = {
           link: '/css/#图片布局：实现图片木桶布局（原百度图片布局方式）'
         },
       ]
-    },  
+    },
     {
       text: 'Optimize',
       items: [
@@ -165,7 +165,7 @@ const sidebar = {
           link: '/css/#如何通过CSS开启硬件加速来提高网站性能'
         },
       ]
-    },  
+    },
   ],
   'typescript': [
     {
@@ -180,7 +180,7 @@ const sidebar = {
           link: '/vue/#typescript及静态类型语言的优缺点'
         },
       ]
-    },  
+    },
   ],
   'vue': [
     {
@@ -189,11 +189,11 @@ const sidebar = {
         {
           text: 'Vue的基本原理',
           link: '/vue/#vue的基本原理'
-        },        
+        },
         {
           text: '双向数据绑定的原理',
           link: '/vue/#双向数据绑定的原理'
-        },        
+        },
         {
           text: 'MVVM MVC MVP 的区别',
           link: '/vue/#mvvm-mvc-mvp-的区别'
@@ -201,7 +201,7 @@ const sidebar = {
         {
           text: 'Vue模板编译原理',
           link: '/vue/#vue模板编译原理'
-        },        
+        },
         {
           text: '对Vue组件化的理解',
           link: '/vue/#对vue组件化的理解'
@@ -209,7 +209,7 @@ const sidebar = {
         {
           text: '对Vue设计原则的理解',
           link: '/vue/#对vue设计原则的理解'
-        },        
+        },
         {
           text: '说说Vue的生命周期',
           link: '/vue/#说说vue的生命周期'
@@ -221,6 +221,10 @@ const sidebar = {
         {
           text: 'nexttick原理及作用',
           link: '/vue/#nexttick原理及作用'
+        },
+        {
+          text: 'Vue子组件和父组件执行顺序',
+          link: '/vue/#vue子组件和父组件执行顺序'
         },
         {
           text: '子组件可以直接改变父组件的数据吗',
@@ -242,7 +246,7 @@ const sidebar = {
         {
           text: 'Vuex的基本原理',
           link: '/vue/vuex/#vuex的基本原理'
-        },  
+        },
       ]
     }
   ],
@@ -276,7 +280,7 @@ export default {
   themeConfig: {
     nav,
     sidebar,
-    footer: {      
+    footer: {
       license: {
         text: 'MIT License',
         link: 'https://opensource.org/licenses/MIT'
