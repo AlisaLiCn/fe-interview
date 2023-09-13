@@ -235,6 +235,10 @@ const sidebar = {
           link: '/vue/#一般在哪个生命周期请求异步数据'
         },
         {
+          text: 'keep-alive中的生命周期哪些',
+          link: '/vue/#keep-alive中的生命周期哪些'
+        },
+        {
           text: '子组件可以直接改变父组件的数据吗',
           link: '/vue/#子组件可以直接改变父组件的数据吗'
         },
