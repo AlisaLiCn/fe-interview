@@ -260,6 +260,15 @@ const sidebar = {
           link: '/vue/vuex/#vuex的基本原理'
         },
       ]
+    },
+    {
+      text: 'Vue Router',
+      items: [
+        {
+          text: '路由的hash和history模式区别',
+          link: '/vue/vue-router/#路由的hash和history模式区别'
+        },
+      ]
     }
   ],
   'engineering': [
