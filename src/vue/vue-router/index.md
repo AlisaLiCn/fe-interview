@@ -34,3 +34,8 @@ const router = new VueRouter({
 - hash模式下，仅hash符号之前的url会被包含在请求中，后端如果没有做到对路由的全覆盖，也不会返回404错误；history模式下，前端的url必须和实际向后端发起请求的url一致，如果没有对应的路由处理，将返回404错误。
 
 hash模式和history模式都有各自的优势和缺陷，还是要根据实际情况选择性的使用。
+
+### vue-router跳转和location.href有什么区别
+使用location.href=/url来跳转，简单方便，但是刷新了页面；使用history.pushState(/url)，无刷新页面，静态跳转；
+
+引进router，然后使用router.push(/url)来跳转，使用了diff算法，实现了按需加载，减少了dom的消耗。其实使用router跳转和使用history.pushState()没什么差别的，因为vue-router就是用了 history.pushState()，尤其是在history模式下。

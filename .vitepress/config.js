@@ -248,7 +248,7 @@ const sidebar = {
         },
         {
           text: 'Vue的优点',
-          links: '/vue/#vue的优点'
+          link: '/vue/#vue的优点'
         }
       ]
     },
@@ -268,6 +268,10 @@ const sidebar = {
           text: '路由的hash和history模式区别',
           link: '/vue/vue-router/#路由的hash和history模式区别'
         },
+        {
+          text: 'vue-router跳转和location.href有什么区别',
+          link: '/vue/vue-router/#vue-router跳转和location-href有什么区别'
+        }
       ]
     }
   ],
