@@ -259,6 +259,10 @@ const sidebar = {
           text: 'Vuex的基本原理',
           link: '/vue/vuex/#vuex的基本原理'
         },
+        {
+          text: 'Vuex和localStorage区别',
+          link: '/vue/vuex/#vuex和localstorage区别'
+        }
       ]
     },
     {

@@ -23,3 +23,16 @@ Vuex为Vue Components建立起了一个完整的生态圈，包括开发中的AP
 - getters∶ state对象读取方法。图中没有单独列出该模块，应该被包含在了render中，Vue Components通过该方法读取全局state对象。
 
 总结：Vuex实现了一个单向数据流，在全局拥有一个State存放数据，当组件要更改State中的数据时，必须通过Mutation提交修改信息， Mutation同时提供了订阅者模式供外部插件调用获取State数据的更新。而当所有异步操作（常见于调用后端接口异步获取更新数据）或批量的同步操作需要走Action ，但Action也是无法直接修改State的，还是需要通过Mutation来修改State的数据。最后，根据State的变化，渲染到视图上。
+
+### Vuex和localStorage区别
+1. 最重要的区别
+vuex存储在内存中，localstorage则以文件的方式存储在本地，只能存储字符串类型的数据，存储对象需要JSON的stringify和parse方法进行处理。读取内存比读取硬盘速度要快。
+
+2. 应用场景
+Vuex是一个专为Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。vuex用于组件之间的传值。
+localstorage是本地存储，是将数据存储到浏览器的方法，一般是在跨页面传递数据时使用。
+Vuex能做到数据的响应式，localstorage不能。
+
+3. 永久性
+刷新页面时vuex存储的值会丢失，localstorage不会。
+注意：对于不变的数据确实可以用localstorage可以代替vuex，但是当两个组件共用一个数据源（对象或数组）时，如果其中一个组件改变了该数据源，希望另一个组件响应该变化时，localstorage无法做到，原因就是区别1。
