@@ -249,6 +249,10 @@ const sidebar = {
         {
           text: 'Vue的优点',
           link: '/vue/#vue的优点'
+        },
+        {
+          text: 'Vue3的新变化',
+          link: '/vue/#vue3的新变化'
         }
       ]
     },

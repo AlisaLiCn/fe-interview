@@ -161,3 +161,31 @@ Vue 提倡单向数据流，即父级 props 的更新会流向子组件，但是
 - 视图，数据，结构分离：使数据的更改更为简单，不需要进行逻辑代码的修改，只需要操作数据就能完成相关操作；
 - 虚拟DOM：dom操作是非常耗费性能的，不再使用原生的dom操作节点，极大解放dom操作，但具体操作的还是dom不过是换了另一种方式；
 - 运行速度更快：相比较于react而言，同样是操作虚拟dom，就性能而言， vue存在很大的优势。
+
+### Vue3的新变化
+1. 数据响应式监测实现方式变更
+Vue3中数据基于JavaScript Proxy（代理）实现，替换了Vue2中基于Object.defineProperty的实现方式，消除了Vue2中数据响应式变化监测的几个限制。
+
+2. 增加Composition API
+- 代码的组织更灵活
+- 避免了Vue2中Mixin写法导致的代码来源不清晰
+
+3. 模板编译
+
+4. 全局API变更
+全局API 应用实例：
+- Vue2：通过new Vue()创建Vud的实例，从同一个Vue构造函数创建的每个根实例共享相同的全局配置。
+  - 在测试期间，全局配置很容易意外地污染其他测试用例。
+  - 全局配置使得在同一页面上的多个“应用”在全局配置不同时共享同一个 Vue 副本非常困难。
+- Vue3：引入了新的全局API，调用createApp()返回一个应用实例。避免了上述问题。
+
+全局API tree-shaking：
+- Vue2中Vue.nextTick()等全局API，是直接暴露在单个Vue对象上的，Vue3中，全局API通过具名导出进行访问
+- 全局API使用方式的变更，在模块打包工具支持tree-shaking时，Vue应用中未使用的全局API将从最终的打包产物中排除，从而获得最佳的文件大小。
+
+5. 其他变化
+- 支持Fragment（多个根节点）和Teleport组件。
+
+参考资料：
+- [深入响应式系统](https://cn.vuejs.org/guide/extras/reactivity-in-depth.html)
+- [Vue3迁移指南-非兼容性改变](https://v3-migration.vuejs.org/zh/breaking-changes/)
