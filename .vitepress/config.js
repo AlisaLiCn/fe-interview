@@ -266,6 +266,22 @@ const sidebar = {
         {
           text: 'Vuex和Redux的异同',
           link: '/vue/vuex/#vuex和redux的异同'
+        },
+        {
+          text: '为什么使用Vuex或Redux',
+          link: '/vue/vuex/#为什么使用vuex或redux'
+        },
+        {
+          text: 'Vuex有哪几种属性',
+          link: '/vue/vuex/#vuex有哪几种属性'
+        },
+        {
+          text: 'Vuex和单纯的全局对象有什么区别',
+          link: '/vue/vuex/#vuex和单纯的全局对象有什么区别'
+        },
+        {
+          text: '为什么Vuex的mutation中不能做异步操作',
+          link: '/vue/vuex/#为什么vuex的mutation中不能做异步操作'
         }
       ]
     },
