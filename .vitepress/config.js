@@ -262,6 +262,10 @@ const sidebar = {
         {
           text: 'Vuex和localStorage区别',
           link: '/vue/vuex/#vuex和localstorage区别'
+        },
+        {
+          text: 'Vuex和Redux的异同',
+          link: '/vue/vuex/#vuex和redux的异同'
         }
       ]
     },
