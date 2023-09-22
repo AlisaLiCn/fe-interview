@@ -163,28 +163,60 @@ Vue 提倡单向数据流，即父级 props 的更新会流向子组件，但是
 - 运行速度更快：相比较于react而言，同样是操作虚拟dom，就性能而言， vue存在很大的优势。
 
 ### Vue3的新变化
-1. 数据响应式监测实现方式变更
-Vue3中数据基于JavaScript Proxy（代理）实现，替换了Vue2中基于Object.defineProperty的实现方式，消除了Vue2中数据响应式变化监测的几个限制。
+1. 数据响应式系统升级
+- Vue2中响应式系统的核心是Object.defineProperty，需要进行深度遍历所有属性，给每个属性添加getter和setter，且在初始化时就需要全部处理。
+- Vue3中使用Proxy重写响应式系统，只有在访问属性时才去拦截。消除了Vue2中数据响应式变化监测的几个限制：
+  - 可以监听动态新增的属性
+  - 可以监听删除的属性
+  - 可以监听数组的索引和length值
 
-2. 增加Composition API
-- 代码的组织更灵活
+2. 编译阶段优化
+
+diff算法优化：
+- vue2中通过标记静态**根**节点，优化diff的过程，diff时会跳过静态根节点
+- vue3中标记和提升所有的静态节点，diff时只需要对比动态内容
+  * 引入Fragments，模板中不需要创建唯一根节点
+  * 静态提升，diff时跳过静态节点
+  * patchFlag进行节点标记，diff时只更新动态的内容
+  * 缓存事件处理函数，减少不必要的更新=
+
+静态提升：
+对不参与更新的元素，会做静态提升，只会被创建一次，在渲染时直接复用。
+这样免去了重复的创建节点，大型应用会受益于这个改动，优化运行时的内存占用。
+
+动态标记：
+Vue3在diff算法相比2增加了动态标记，作用是为了在发生变化的地方加一个flag标记，下次发生变化时直接找该位置进行比较。提升性能。作为动态标记的类型有：
+- Text 动态的文本节点
+- CLASS 动态的class
+- STYLE 动态的style
+
+3. 增加Composition API
+- 代码的逻辑组织、复用更灵活
 - 避免了Vue2中Mixin写法导致的代码来源不清晰
+- setup作为入口
+- 全新的响应式API及生命周期钩子，ref()、reactive()等
+- 可以与Vue2的option API一起使用
+- Vue3模块可以和其他框架搭配使用
 
-3. 模板编译
+4. 更好的typescript支持
+- vue2基于flow
+- Vue3是基于ts编写，可以享受自动的类型提示
 
-4. 全局API变更
-全局API 应用实例：
-- Vue2：通过new Vue()创建Vud的实例，从同一个Vue构造函数创建的每个根实例共享相同的全局配置。
-  - 在测试期间，全局配置很容易意外地污染其他测试用例。
-  - 全局配置使得在同一页面上的多个“应用”在全局配置不同时共享同一个 Vue 副本非常困难。
-- Vue3：引入了新的全局API，调用createApp()返回一个应用实例。避免了上述问题。
+5. 源码体积方面
+- 移除了一些不常用API，例如：inline-template、filter等（filter可以通过method或computed实现）
+- Vue3中，全局API通过具名导出方式进行访问，对tree-shaking支持更好，tree-shaking依赖ES Module，在打包阶段过滤掉没有引用的模块，让打包体积更小。
 
-全局API tree-shaking：
-- Vue2中Vue.nextTick()等全局API，是直接暴露在单个Vue对象上的，Vue3中，全局API通过具名导出进行访问
-- 全局API使用方式的变更，在模块打包工具支持tree-shaking时，Vue应用中未使用的全局API将从最终的打包产物中排除，从而获得最佳的文件大小。
+6. 其他变化
+- 支持fragments：vue组件支持多个根节点。
+- 新增teleport内置组件：模板的传送门，它可以将一个组件内部的一部分模板“传送”到该组件的DOM结构外层的位置去。例如modal、toast之类的应用场景。
 
-5. 其他变化
-- 支持Fragment（多个根节点）和Teleport组件。
+整体来说：
+* 性能提升
+* 速度更快
+* 体积更小
+* 更易维护
+* 更接近原生
+* 更容易使用
 
 参考资料：
 - [深入响应式系统](https://cn.vuejs.org/guide/extras/reactivity-in-depth.html)
