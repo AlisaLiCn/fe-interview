@@ -253,6 +253,10 @@ const sidebar = {
         {
           text: 'Vue3的新变化',
           link: '/vue/#vue3的新变化'
+        },
+        {
+          text: 'defineProperty和proxy的区别',
+          link: '/vue/#defineProperty和proxy的区别'
         }
       ]
     },
