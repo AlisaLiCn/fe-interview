@@ -232,3 +232,14 @@ Object.defineProperty是ES5中一个无法shim的特性，这也就是Vue不支�
 Vue3使用Proxy来监控数据的变化。Proxy是ES6中提供的功能，其作用为：用于定义基本操作的自定义行为（如属性查找，赋值，枚举，函数调用等）。相对于Object.defineProperty()，其有以下特点：
 - Proxy直接代理整个对象而非对象属性，这样只需做一层代理就可 以监听同级结构下的所有属性变化，包括新增属性和删除属性。 
 - Proxy可以监听数组的变化。
+
+### Vue3为什么要用Proxy
+在Vue2中，0bject.defineProperty会改变原始数据，而Proxy是创建对象的虚拟表示，并提供set、get和deleteProperty等处理器，这些处理器可在访问或修改原始对象上的属性时进行拦截，有以下特点∶ 
+- 不需用使用Vue.$set或Vue.$delete触发响应式。
+- 全方位的数组变化检测，消除了Vue2无效的边界情况。
+- 支持Map，Set，WeakMap和WeakSet。
+
+Proxy实现的响应式原理与Vue2的实现原理相同，实现方式大同小异∶ 
+- get收集依赖
+- Set、delete等触发依赖
+对于集合类型，就是对集合对象的方法做一层包装：原方法执行后执行依赖相关的收集或触发逻辑。

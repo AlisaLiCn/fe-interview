@@ -257,6 +257,10 @@ const sidebar = {
         {
           text: 'defineProperty和proxy的区别',
           link: '/vue/#defineProperty和proxy的区别'
+        },
+        {
+          text: 'Vue3为什么要用Proxy',
+          link: '/vue/#vue3为什么要用proxy'
         }
       ]
     },
