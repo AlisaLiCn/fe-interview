@@ -261,6 +261,10 @@ const sidebar = {
         {
           text: 'Vue3为什么要用Proxy',
           link: '/vue/#vue3为什么要用proxy'
+        },
+        {
+          text: '虚拟DOM的解析过程',
+          link: '/vue/#虚拟dom的解析过程'
         }
       ]
     },
