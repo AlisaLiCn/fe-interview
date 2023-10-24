@@ -122,6 +122,19 @@ const sidebar = {
         }
       ]
     },
+    {
+      text: '性能优化',
+      items: [
+        {
+          text: '懒加载的概念',
+          link: '/javascript/optimize/#懒加载的概念'
+        },
+        {
+          text: '懒加载的实现原理',
+          link: '/javascript/optimize/#懒加载的实现原理'
+        }
+      ]
+    }
   ],
   'html': [
     {
