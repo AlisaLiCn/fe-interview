@@ -269,6 +269,10 @@ const sidebar = {
         {
           text: 'diff算法原理',
           link: '/vue/#diff算法原理'
+        },
+        {
+          text: 'Vue中key的作用',
+          link: '/vue/#vue中key的作用'
         }
       ]
     },
