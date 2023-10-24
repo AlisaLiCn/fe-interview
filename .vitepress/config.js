@@ -265,6 +265,10 @@ const sidebar = {
         {
           text: '虚拟DOM的解析过程',
           link: '/vue/#虚拟dom的解析过程'
+        },
+        {
+          text: 'diff算法原理',
+          link: '/vue/#diff算法原理'
         }
       ]
     },
