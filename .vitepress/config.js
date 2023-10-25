@@ -132,6 +132,10 @@ const sidebar = {
         {
           text: '懒加载的实现原理',
           link: '/javascript/optimize/#懒加载的实现原理'
+        },
+        {
+          text: '对防抖和节流的理解',
+          link: '/javascript/optimize/#对防抖和节流的理解'
         }
       ]
     }
