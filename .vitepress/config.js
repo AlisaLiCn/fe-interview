@@ -138,7 +138,7 @@ const sidebar = {
   ],
   'html': [
     {
-      text: 'Optimize',
+      text: '性能优化&体验优化',
       items: [
         {
           text: '在HTML中延迟加载JavaScript脚本的方式有哪些',
