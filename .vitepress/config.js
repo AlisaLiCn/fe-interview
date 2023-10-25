@@ -145,6 +145,14 @@ const sidebar = {
           link: '/html/#在HTML中延迟加载JavaScript脚本的方式有哪些'
         },
         {
+          text: '重排与重绘概念及触发操作',
+          links: '/html/#重排与重绘概念及触发操作'
+        },
+        {
+          text: '如何减少重排与重绘',
+          link: '/html/#如何减少重排与重绘',
+        },
+        {
           text: '如何提高web可访问性',
           link: '/html/#如何提高web可访问性'
         },
