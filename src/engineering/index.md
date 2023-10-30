@@ -80,6 +80,20 @@ pnpm弊端：
 - webpack-bundle-analyzer: 可视化 webpack 输出⽂件的体积 
 - mini-css-extract-plugin: CSS 提取到单独的⽂件中，⽀持按需加载
 
+5. bundle，chunk，module是什么
+- bundle：是由 webpack 打包出来的⽂件；
+- chunk：代码块，⼀个 chunk 由多个模块组合⽽成，⽤于代码的合并和分割；
+- module：是开发中的单个模块，在 webpack 的世界，⼀切皆模块，⼀个模块对应⼀个⽂件，webpack 会从配置的 entry 中递归开始找出所有依赖的模块。
+
+### webpack中loader和plugin的不同
+作⽤不同: 
+- Loader直译为"加载器"。Webpack将⼀切⽂件视为模块，但是 webpack 原⽣是只能解析js⽂件，如果想将其他⽂件也打包的话，就会⽤到loader。所以Loader 的作⽤是让 webpack 拥有了加载和解析⾮JavaScript⽂件的能⼒。
+- Plugin直译为"插件"。Plugin 可以扩展 webpack 的功能，让 webpack 具有更多的灵活性。在 Webpack 运⾏的⽣命周期中会⼴播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 Webpack 提供的API改变输出结果。
+
+用法不同：
+- Loader在 module.rules中配置，也就是说他作为模块的解析规则⽽存在。类型为数组，每⼀项都是⼀个Object，⾥⾯描述了对于什么类型的⽂件（ test ），使⽤什么加载( loader )和使⽤的参数（ options ） 
+- Plugin在plugins中单独配置。类型为数组，每⼀项是⼀个plugin的实例，参数都通过构造函数传⼊。
+
 ### 设计实现前端埋点SDK
 **埋点监控的作用**  
 - 数据监控：监控用户行为

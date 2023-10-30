@@ -376,6 +376,14 @@ const sidebar = {
         {
           text: 'webpack常用的plugin',
           links: '/engineering/#webpack常用的plugin'
+        },
+        {
+          text: 'bundle，chunk，module是什么',
+          links: '/engineering/#bundle-chunk-module是什么'
+        },
+        {
+          text: 'webpack中loader和plugin的不同',
+          links: '/engineering/#webpack中loader和plugin的不同'
         }
       ]
     },
