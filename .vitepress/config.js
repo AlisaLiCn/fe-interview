@@ -364,6 +364,10 @@ const sidebar = {
         {
           text: '如何⽤webpack来优化前端性能',
           links: '/engineering/#如何⽤webpack来优化前端性能'
+        },
+        {
+          text: '如何提高webpack构建速度',
+          links: '/engineering/#如何提高webpack构建速度'
         }
       ]
     },

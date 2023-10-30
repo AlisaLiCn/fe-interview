@@ -52,6 +52,14 @@ pnpm弊端：
 - Code Splitting: 将代码按路由维度或者组件分块(chunk),这样做到按需加载,同时可以充分利⽤浏览器缓存 
 - 提取公共第三⽅库: SplitChunksPlugin插件来进⾏公共模块抽取, 利⽤浏览器缓存可以⻓期缓存这些⽆需频繁变动的公共代码
 
+### 如何提高webpack构建速度
+1.多⼊⼝情况下，使⽤ CommonsChunkPlugin 来提取公共代码
+2.通过 externals 配置来提取常⽤库
+3.利⽤ DllPlugin 和 DllReferencePlugin 预编译资源模块 通过 DllPlugin 来对那些我们引⽤但是绝对不会修改的 npm 包来进⾏预编译，再通过 DllReferencePlugin 将预编译的模块加载进来。
+4.使⽤ Happypack 实现多线程加速编译
+5.使⽤ webpack-uglify-parallel 来提升 uglifyPlugin 的压缩速度。原理上 webpack-uglify-parallel 采⽤了多核并⾏压缩来提升压缩速度
+6.使⽤ Tree-shaking 和 Scope Hoisting 来剔除多余代码
+
 ### 设计实现前端埋点SDK
 **埋点监控的作用**  
 - 数据监控：监控用户行为
