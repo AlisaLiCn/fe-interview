@@ -72,6 +72,14 @@ pnpm弊端：
 
 注意：在 Webpack 中，loader 的执行顺序是从右向左执行的。因为 webpack 选择了 compose 这样的函数式编程方式，这种方式的表达式执行是从右向左的。
 
+### webpack常用的plugin
+- define-plugin：定义环境变量
+- html-webpack-plugin：简化html⽂件创建
+- uglifyjs-webpack-plugin：通过 UglifyES 压缩 ES6 代码
+- webpack-parallel-uglify-plugin: 多核压缩，提⾼压缩速度
+- webpack-bundle-analyzer: 可视化 webpack 输出⽂件的体积 
+- mini-css-extract-plugin: CSS 提取到单独的⽂件中，⽀持按需加载
+
 ### 设计实现前端埋点SDK
 **埋点监控的作用**  
 - 数据监控：监控用户行为

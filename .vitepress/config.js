@@ -372,6 +372,10 @@ const sidebar = {
         {
           text: 'webpack常用的loader',
           links: '/engineering/#webpack常用的loader'
+        },
+        {
+          text: 'webpack常用的plugin',
+          links: '/engineering/#webpack常用的plugin'
         }
       ]
     },
