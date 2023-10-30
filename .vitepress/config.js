@@ -368,6 +368,10 @@ const sidebar = {
         {
           text: '如何提高webpack构建速度',
           links: '/engineering/#如何提高webpack构建速度'
+        },
+        {
+          text: 'webpack常用的loader',
+          links: '/engineering/#webpack常用的loader'
         }
       ]
     },

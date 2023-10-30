@@ -53,12 +53,24 @@ pnpm弊端：
 - 提取公共第三⽅库: SplitChunksPlugin插件来进⾏公共模块抽取, 利⽤浏览器缓存可以⻓期缓存这些⽆需频繁变动的公共代码
 
 ### 如何提高webpack构建速度
-1.多⼊⼝情况下，使⽤ CommonsChunkPlugin 来提取公共代码
-2.通过 externals 配置来提取常⽤库
-3.利⽤ DllPlugin 和 DllReferencePlugin 预编译资源模块 通过 DllPlugin 来对那些我们引⽤但是绝对不会修改的 npm 包来进⾏预编译，再通过 DllReferencePlugin 将预编译的模块加载进来。
-4.使⽤ Happypack 实现多线程加速编译
-5.使⽤ webpack-uglify-parallel 来提升 uglifyPlugin 的压缩速度。原理上 webpack-uglify-parallel 采⽤了多核并⾏压缩来提升压缩速度
-6.使⽤ Tree-shaking 和 Scope Hoisting 来剔除多余代码
+- 多⼊⼝情况下，使⽤ CommonsChunkPlugin 来提取公共代码
+- 通过 externals 配置来提取常⽤库
+- 利⽤ DllPlugin 和 DllReferencePlugin 预编译资源模块 通过 DllPlugin 来对那些我们引⽤但是绝对不会修改的 npm 包来进⾏预编译，再通过 DllReferencePlugin 将预编译的模块加载进来。
+- 使⽤ Happypack 实现多线程加速编译
+- 使⽤ webpack-uglify-parallel 来提升 uglifyPlugin 的压缩速度。原理上 webpack-uglify-parallel 采⽤了多核并⾏压缩来提升压缩速度
+- 使⽤ Tree-shaking 和 Scope Hoisting 来剔除多余代码
+
+### webpack常用的loader
+- file-loader：把⽂件输出到⼀个⽂件夹中，在代码中通过相对URL去引⽤输出的⽂件
+- url-loader：和 file-loader 类似，但是能在⽂件很⼩的情况下以 base64 的⽅式把⽂件内容注⼊到代码中去 
+- source-map-loader：加载额外的 Source Map ⽂件，以⽅便断点调试
+- image-loader：加载并且压缩图⽚⽂件
+- babel-loader：把 ES6 转换成 ES5 
+- css-loader：加载 CSS，⽀持模块化、压缩、⽂件导⼊等特性
+- style-loader：把 CSS 代码注⼊到 JavaScript 中，通过 DOM 操作去加载 CSS。
+- eslint-loader：通过 ESLint 检查 JavaScript 代码 
+
+注意：在 Webpack 中，loader 的执行顺序是从右向左执行的。因为 webpack 选择了 compose 这样的函数式编程方式，这种方式的表达式执行是从右向左的。
 
 ### 设计实现前端埋点SDK
 **埋点监控的作用**  
