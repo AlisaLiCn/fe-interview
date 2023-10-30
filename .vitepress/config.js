@@ -359,6 +359,15 @@ const sidebar = {
       ]
     },
     {
+      text: 'Webpack',
+      items: [
+        {
+          text: '如何⽤webpack来优化前端性能',
+          links: '/engineering/#如何⽤webpack来优化前端性能'
+        }
+      ]
+    },
+    {
       text: '前端监控',
       items: [
         {
