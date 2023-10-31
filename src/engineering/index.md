@@ -115,6 +115,12 @@ HotModulePlugin 将会对新旧模块进⾏对⽐，决定是否更新模块，�
 
 最后⼀步，当 HMR 失败后，回退到 live reload 操作，也就是进⾏浏览器刷新来获取最新打包代码。
 
+### babel原理
+babel 的转译过程分为三个阶段：
+- 解析 Parse: 将代码解析⽣成抽象语法树（AST），即词法分析与语法分析的过程；
+- 转换 Transform: 对于 AST 进⾏变换⼀系列的操作，babel 接受得到 AST 并通过 babel-traverse 对其进⾏遍历，在此过程中进⾏添加、更新及移除等操作；
+- ⽣成 Generate: 将变换后的 AST 再转换为 JS 代码, 使⽤到的模块是 babel-generator。
+
 ### 设计实现前端埋点SDK
 **埋点监控的作用**  
 - 数据监控：监控用户行为

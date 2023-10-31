@@ -392,6 +392,15 @@ const sidebar = {
       ]
     },
     {
+      text: 'Babel',
+      items: [
+        {
+          text: 'babel原理',
+          link: '/engineering/#babel原理'
+        }
+      ]
+    },
+    {
       text: '前端监控',
       items: [
         {
