@@ -384,7 +384,11 @@ const sidebar = {
         {
           text: 'webpack中loader和plugin的不同',
           links: '/engineering/#webpack中loader和plugin的不同'
-        }
+        },        
+        {
+          text: 'webpack热更新的原理',
+          links: '/engineering/#webpack热更新的原理'
+        },
       ]
     },
     {
