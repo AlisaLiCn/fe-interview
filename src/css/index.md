@@ -1,3 +1,31 @@
+### 水平垂直居中的实现
+1. 绝对定位
+
+先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过translate来调整元素的中心点到页面的中心。
+
+```css
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+2. flex布局
+
+```css
+.parent {
+  display: flex;
+  justify-content: center;
+  align-center: center;
+}
+```
+
+
 ### 说说对CSS层叠上下文的理解
 参考题解：
 

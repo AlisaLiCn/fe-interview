@@ -142,6 +142,15 @@ const sidebar = {
   ],
   'html': [
     {
+      text: '基础',
+      items: [
+        {
+          text: '对HTML语义化的理解',
+          link: '/html/#对html语义化的理解'
+        }
+      ]
+    },
+    {
       text: '性能优化&体验优化',
       items: [
         {
@@ -185,6 +194,10 @@ const sidebar = {
     {
       text: 'Optimize',
       items: [
+        {
+          text: 'CSS优化和提升性能的方法',
+          link: '/css/#css优化和提升性能的方法'
+        },
         {
           text: '如何通过CSS开启硬件加速来提高网站性能',
           link: '/css/#如何通过CSS开启硬件加速来提高网站性能'
