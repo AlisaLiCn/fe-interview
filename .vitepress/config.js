@@ -166,6 +166,10 @@ const sidebar = {
           link: '/html/#如何减少重排与重绘',
         },
         {
+          text: '如何对项目中的图片进行优化',
+          link: '/html/如何对项目中的图片进行优化'
+        },
+        {
           text: '如何提高web可访问性',
           link: '/html/#如何提高web可访问性'
         },
