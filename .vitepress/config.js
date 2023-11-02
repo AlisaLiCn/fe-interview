@@ -188,6 +188,10 @@ const sidebar = {
           text: '说说对CSS层叠上下文的理解',
           link: '/css/#说说对CSS层叠上下文的理解'
         },
+        {
+          text: '如何解决1px问题',
+          link: '/css/#如何解决1px问题'
+        }
       ]
     },
     {

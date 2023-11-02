@@ -78,6 +78,54 @@ BFC的作用：
 - [深入理解CSS中的层叠上下文和层叠顺序](https://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/)
 - [彻底搞懂CSS层叠上下文、层叠等级、层叠顺序、z-index](https://juejin.cn/post/6844903667175260174)
 
+### 如何解决1px问题
+1px 问题指的是：在一些 Retina 屏幕 的机型上，移动端页面的 1px 会变得很粗，呈现出不止 1px 的效果。原因很简单——CSS 中的 1px
+并不能和移动设备上的 1px 划等号。它们之间的比例关系有一个专 门的属性来描述：
+```
+window.devicePixelRatio = 设备的物理像素 / CSS像素
+```
+打开Chrome浏览器，启动移动端调试模式，在控制台去输出这个devicePixelRatio的值。这里选中iPhone6/7/8这系列的机型，输出的结果就是2：
+这就意味着设置的1px CSS像素，在这个设备上实际会用2个物理像素单元来进行渲染，所以实际看到的一定会比1px粗一些。
+
+解决思路：
+
+思路一：直接写0.5px
+
+如果之前1px的样式这样写：
+```
+boder: 1px solid #333;
+```
+可以先在JS中拿到window.devicePixelRatio的值，然后把这个值通过JSX或者模板语法给到CSS的data里，达到这样的效果（这里用JSX语法做示范）：
+```
+<div id="container" data-device={{window.devicePixelRatio}}"></div>
+```
+然后就可以在CSS中用属性选择器来命中devicePixelRatio为某一值的情况，比如说这里尝试命中devicePixelRatio为2的情况：
+```css
+#container[data-device="2"] {
+  border: 0.5px solid #333;
+}
+```
+直接把1px改成1/devicePixelRatio后的值，这是目前为止最简单的一种方法。这种方法的缺陷在于兼容性不行，IOS系统需要8及以上的版本，安卓系统则直接不兼容。
+
+思路二：伪元素先放大后缩小 
+
+这个方法的可行性会更高，兼容性也更好。唯一的缺点是代码会变多。思路是先放大、后缩小：在目标元素的后面追加一个::after伪元素，让这个元素布局为absolute之后、整个伸展开铺在目标元素上，然后把它的宽和高都设置为目标元素的两倍，border值设为1px。接着借助CSS动画特效中的放缩能力，把整个伪元素缩小为原来的50%。此时，伪元素的宽高刚好可以和原有的目标元素对齐，而border也缩小为了1px的二分之一，间接地实现了0.5px的效果。 代码如下：
+```css
+#container[data-device="2"] {
+  position: relative;
+}
+#container[data-device="2"]::after {
+  position: absolute;
+  top: 0;  
+  left: 0;
+  width: 200%;
+  height: 200%;
+  content: '';
+  transform: scale(0.5);
+  transform-origin: left top;
+  border: 1px solid #333;
+}
+```
 
 ### 图片布局：实现图片木桶布局（原百度图片布局方式）
 参考题解：
