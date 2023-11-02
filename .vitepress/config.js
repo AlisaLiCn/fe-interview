@@ -177,6 +177,14 @@ const sidebar = {
       text: 'Basics',
       items: [
         {
+          text: '水平垂直居中的实现',
+          link: '/css/#水平垂直居中的实现'
+        },
+        {
+          text: '对BFC的理解',
+          link: '/css/#对bfc的理解'
+        },
+        {
           text: '说说对CSS层叠上下文的理解',
           link: '/css/#说说对CSS层叠上下文的理解'
         },
