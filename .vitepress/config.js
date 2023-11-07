@@ -3,12 +3,14 @@
 const nav = [
   {
     text: 'Basics',
-    activeMatch: `^/(html|css|javascript|typescript)/`,
+    activeMatch: `^/(html|css|javascript|typescript|browser)/`,
     items: [
       { text: 'JavaScript', link: '/javascript/' },
       { text: 'HTML', link: '/html/' },
       { text: 'CSS', link: '/css/' },
       { text: 'TypeScript', link: '/typescript/' },
+      { text: '浏览器原理', link: '/browser/' },
+      { text: '计算机网络', link: '/computer-network/' },
     ]
   },
   {
@@ -231,12 +233,42 @@ const sidebar = {
       items: [
         {
           text: 'TypeScript及静态类型语言的优缺点',
-          link: '/vue/#typescript及静态类型语言的优缺点'
+          link: '/typescript/#typescript及静态类型语言的优缺点'
         },
         {
           text: 'TypeScript及静态类型语言的优缺点',
-          link: '/vue/#typescript及静态类型语言的优缺点'
+          link: '/typescript/#typescript及静态类型语言的优缺点'
         },
+      ]
+    },
+  ],
+  'browser': [
+    {
+      text: '浏览器原理',
+      items: [
+        {
+          text: '进程和线程',
+          link: '/browser/#进程和线程'
+        },
+        {
+          text: '浏览器的多进程架构',
+          link: '/browser/#浏览器的多进程架构'
+        },
+        {
+          text: '浏览器的渲染流程',
+          link: '/browser/#浏览器的渲染流程'
+        },        
+      ]
+    },
+  ],
+  'computer-network': [
+    {
+      text: '计算机原理',
+      items: [
+        {
+          text: '强缓存和协商缓存',
+          link: '/computer-network/#强缓存和协商缓存'
+        },        
       ]
     },
   ],
