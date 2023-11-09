@@ -257,7 +257,11 @@ const sidebar = {
         {
           text: '浏览器的渲染流程',
           link: '/browser/#浏览器的渲染流程'
-        },        
+        },
+        {
+          text: 'PWA解决了web应用哪些问题',
+          link: '/browser/#pwa解决了web应用哪些问题'
+        }    
       ]
     },
   ],
