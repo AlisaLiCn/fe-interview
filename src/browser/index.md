@@ -79,6 +79,16 @@ Chrome浏览器包括：1个浏览器（Browser）主进程、1个 GPU 进程、
 参考资料：
 - [浏览器工作原理与实践 - 渲染流程](https://blog.poetries.top/browser-working-principle/guide/part1/lesson05.html#%E6%9E%84%E5%BB%BAdom%E6%A0%91)
 
+### 如何实现不同标签页之间通信
+实现多个标签页之间的通信，本质上都是通过中介者模式来实现的。因为标签页之间没有办法直接通信，因此我们可以找一个中介者，让标签页和中介者进行通信，然后让这个中介者来进行消息的转发。
+- 使用localStorage的方式，设置同域下共享的localStorage。
+- cookie方式，同域下的标签页可共享。
+- 使用postMessage方法。对于两个不同页面的脚本，只有同源时，这两个脚本才能相互通信。父页面window.open()和子页面postMessage。
+- 借助服务端或者Service Worker中间层实现
+
+参考文章：
+- [浏览器跨标签页通信的方式都有什么](https://juejin.cn/post/7270155117705510968?searchId=20231110163050AD6E91402150CA2A6030#heading-3)
+
 ### PWA解决了web应用哪些问题
 PWA，全称是 Progressive Web App，翻译过来就是渐进式网页应用。
 它是一套理念，渐进式增强Web的优势，并通过技术手段渐进式缩短和本地应用或者小程序的距离。基于这套理念之下的技术都可以归类到PWA。
