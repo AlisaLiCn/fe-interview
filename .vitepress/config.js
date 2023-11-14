@@ -3,7 +3,7 @@
 const nav = [
   {
     text: 'Basics',
-    activeMatch: `^/(html|css|javascript|typescript|browser)/`,
+    activeMatch: `^/(html|css|javascript|typescript|browser|algorithm)/`,
     items: [
       { text: 'JavaScript', link: '/javascript/' },
       { text: 'HTML', link: '/html/' },
@@ -11,6 +11,7 @@ const nav = [
       { text: 'TypeScript', link: '/typescript/' },
       { text: '浏览器原理', link: '/browser/' },
       { text: '计算机网络', link: '/computer-network/' },
+      { text: '算法', link: '/algorithm/' },
     ]
   },
   {
@@ -279,6 +280,21 @@ const sidebar = {
         },        
       ]
     },
+  ],
+  'algorithm': [
+    {
+      text: 'leetcode算法题库',
+      items: [
+        {
+          text: '1.两数之和',
+          link: '/algorithm/#1-两数之和'
+        },
+        {
+          text: '217.存在重复元素',
+          link: '/algorithm/#217-存在重复元素'
+        }
+      ]
+    }
   ],
   'vue': [
     {
