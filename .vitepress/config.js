@@ -290,6 +290,10 @@ const sidebar = {
           link: '/algorithm/#1-两数之和'
         },
         {
+          text: '3.无重复字符的最长子串',
+          link: '/algorithm/#3-无重复字符的最长子串'
+        },
+        {
           text: '217.存在重复元素',
           link: '/algorithm/#217-存在重复元素'
         }
