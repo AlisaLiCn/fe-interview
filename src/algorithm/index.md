@@ -5,6 +5,28 @@
 
 你可以按任意顺序返回答案。
 
+示例 1：
+
+输入：nums = [2,7,11,15], target = 9
+输出：[0,1]
+解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+示例 2：
+
+输入：nums = [3,2,4], target = 6
+输出：[1,2]
+示例 3：
+
+输入：nums = [3,3], target = 6
+输出：[0,1]
+ 
+
+提示：
+
+- 2 <= nums.length <= 104
+- -109 <= nums[i] <= 109
+- -109 <= target <= 109
+- 只会存在一个有效答案
+
 **解法**
 
 使用哈希表m存放数组值以及对应的下标。
@@ -57,11 +79,11 @@ var twoSum = function (nums, target) {
 **解法**
 思路：双指针+哈希表
 
-定义一个哈希表记录当前窗口内出现的字符，记 $i$ 和 $j$ 分别表示不重复子串的开始位置和结束位置，无重复字符子串的最大长度记为`ans`。
+定义一个哈希表记录当前窗口内出现的字符，记 $i$ 和 $j$ 分别表示不重复子串的开始位置和结束位置，无重复字符子串的最大长度记为`result`。
 
-遍历字符串 `s` 的每个字符 $s[j]$，我们记为 $c$。若 $s[i...j-1]$ 窗口内存在 $c$，则 $i$ 循环向右移动，更新哈希表，直至 $s[i...j-1]$ 窗口不存在 `c`，循环结束。将 `c` 加入哈希表中，此时 $s[i...j]$ 窗口内不含重复元素，更新 `ans` 的最大值。
+遍历字符串 `s` 的每个字符 $s[j]$，我们记为 $c$。若 $s[i...j-1]$ 窗口内存在 $c$，则 $i$ 循环向右移动，更新哈希表，直至 $s[i...j-1]$ 窗口不存在 `c`，循环结束。将 `c` 加入哈希表中，此时 $s[i...j]$ 窗口内不含重复元素，更新 `result` 的最大值。
 
-最后返回 `ans` 即可。
+最后返回 `result` 即可。
 
 - 时间复杂度：O(n)
 
@@ -73,15 +95,15 @@ var twoSum = function (nums, target) {
 var lengthOfLongestSubstring = function (s) {
     const ss = new Set();
     let i = 0;
-    let ans = 0;
+    let result = 0;
     for (let j = 0; j < s.length; ++j) {
         while (ss.has(s[j])) {
             ss.delete(s[i++]);
         }
         ss.add(s[j]);
-        ans = Math.max(ans, j - i + 1);
+        result = Math.max(result, j - i + 1);
     }
-    return ans;
+    return result;
 };
 
 ```
