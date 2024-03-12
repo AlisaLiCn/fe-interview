@@ -112,7 +112,14 @@ instanceof 运算符用于判断构造函数的 prototype 属性是否出现在�
 
 实现1：
 ```javascript
+function isObject(o) {
+  return typeof o === 'object' && o !== null
+}
+
 function myInstanceof(left, right) {
+  // 非对象类型 返回false
+  if(!isObject(left)) return false
+  
   // 获取对象的原型
   let proto = Object.getPrototypeOf(left)
   // 获取构造函数的prototype属性
