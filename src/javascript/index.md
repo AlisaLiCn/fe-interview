@@ -42,6 +42,7 @@ console.log(typeof null) // object
 其中数组、对象、null 都会被判断为 object，其他判断都正确。
 
 2.instanceof
+
 instanceof 可以正确判断对象的类型，其内部运行机制是判断在其原型链中能否找到该类型的原型。
 ```javascript
 console.log(2 instanceof Number) // false
@@ -58,6 +59,7 @@ instanceof 运算符可以用来测试一个对象在其原型链中是否存在
 
 
 3.constructor
+
 constructor 有两个作用，一是判断数据的类型，二是对象实例通过 constrcutor 对象访问它的构造函数。
 需要注意，如果创建一个对象来改变它的原型，constructor 就不能用来判断数据类型了：
 
@@ -75,6 +77,7 @@ console.log(f.constructor === Array) // true
 ```
 
 4.Object.prototype.toString.call()
+
 Object.prototype.toString.call() 使用 Object 对象的原型方法 toString 来判断数据类型：
 
 ```javascript
