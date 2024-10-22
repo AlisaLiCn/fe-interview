@@ -337,6 +337,10 @@ const sidebar = {
           link: '/vue/#created和mounted区别'
         },
         {
+          text: 'computed和watch区别',
+          link: '/vue/#computed和watch区别'
+        },
+        {
           text: 'slot的作用及原理',
           link: '/vue/#slot的作用及原理'
         },
